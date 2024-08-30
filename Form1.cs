@@ -14,14 +14,14 @@ namespace Simulacion_de_Montecarlo
             MessageBox.Show("Ejecutando la simulación de Monte Carlo");
             // Condicion de vacio
             if (textBox1.Text.Equals("") ||
-               textBox2.Text.Equals("")  ||
-               textBox3.Text.Equals("")  ||
+               textBox2.Text.Equals("") ||
+               textBox3.Text.Equals("") ||
                textBox4.Text.Equals(""))
             {
                 MessageBox.Show("Los números tienen que ser MAYOR que cero, NO VACÍOS");
                 return;
             }
-
+            string inicial ="", final = "";
             // Inicialización de parámetros
             int a = Convert.ToInt32(textBox1.Text);
             int b = Convert.ToInt32(textBox2.Text);
@@ -42,10 +42,10 @@ namespace Simulacion_de_Montecarlo
 
             // Imprecisión
             Simulacion algoritmo = new Simulacion();
-            List<int> listaEnteros = algoritmo.MonteCarlo(a, b, c, d);
-            LlenarDataGrid(listaEnteros);
+            List<int> listaEnteros = algoritmo.SimulacionMontecarlo(a, b, c, d);
+            LlenarDataGrid(listaEnteros,inicial,final);
         }
-        private void LlenarDataGrid(List<int> lista)
+        private void LlenarDataGrid(List<int> lista, string numeroColumna1, string numeroColumnaFINAL)
         {
             // Número de columnas
             // Tiene que ser por el for 1+(numero de experimentos)
@@ -98,6 +98,16 @@ namespace Simulacion_de_Montecarlo
         private void button0_Click_1(object sender, EventArgs e)
         {
             DescargasExcel(dataGridView1);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DataGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

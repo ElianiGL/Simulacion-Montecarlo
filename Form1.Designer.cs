@@ -32,14 +32,14 @@
             MuestraExperimentos = new Label();
             RangoInferior = new Label();
             RangoSuperior = new Label();
-            button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
-            button4 = new Button();
-            DataGrid = new DataGridView();
             Ejecutar = new Button();
             Descargar = new Button();
-            ((System.ComponentModel.ISupportInitialize)DataGrid).BeginInit();
+            textBox1 = new TextBox();
+            textBox2 = new TextBox();
+            textBox3 = new TextBox();
+            textBox4 = new TextBox();
+            dataGridView1 = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // VariableAleatoria
@@ -59,7 +59,6 @@
             MuestraExperimentos.Size = new Size(254, 20);
             MuestraExperimentos.TabIndex = 1;
             MuestraExperimentos.Text = "Tamaño de muestra de experimentos";
-            //MuestraExperimentos.Click += label2_Click;
             // 
             // RangoInferior
             // 
@@ -69,7 +68,6 @@
             RangoInferior.Size = new Size(104, 20);
             RangoInferior.TabIndex = 2;
             RangoInferior.Text = "Rango inferior";
-            //RangoInferior.Click += label3_Click;
             // 
             // RangoSuperior
             // 
@@ -79,48 +77,6 @@
             RangoSuperior.Size = new Size(110, 20);
             RangoSuperior.TabIndex = 3;
             RangoSuperior.Text = "Rango superior";
-            // 
-            // button1
-            // 
-            button1.Location = new Point(161, 23);
-            button1.Name = "button1";
-            button1.Size = new Size(94, 29);
-            button1.TabIndex = 4;
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
-            // 
-            // button2
-            // 
-            button2.Location = new Point(289, 56);
-            button2.Name = "button2";
-            button2.Size = new Size(94, 29);
-            button2.TabIndex = 5;
-            button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            button3.Location = new Point(139, 112);
-            button3.Name = "button3";
-            button3.Size = new Size(94, 29);
-            button3.TabIndex = 6;
-            button3.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            button4.Location = new Point(139, 147);
-            button4.Name = "button4";
-            button4.Size = new Size(94, 29);
-            button4.TabIndex = 7;
-            button4.UseVisualStyleBackColor = true;
-            // 
-            // DataGrid
-            // 
-            DataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            DataGrid.Location = new Point(488, 221);
-            DataGrid.Name = "DataGrid";
-            DataGrid.RowHeadersWidth = 51;
-            DataGrid.Size = new Size(300, 188);
-            DataGrid.TabIndex = 8;
             // 
             // Ejecutar
             // 
@@ -141,26 +97,62 @@
             Descargar.Text = "Descargar";
             Descargar.UseVisualStyleBackColor = true;
             // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(161, 25);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(125, 27);
+            textBox1.TabIndex = 11;
+            // 
+            // textBox2
+            // 
+            textBox2.Location = new Point(292, 68);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(125, 27);
+            textBox2.TabIndex = 12;
+            // 
+            // textBox3
+            // 
+            textBox3.Location = new Point(254, 119);
+            textBox3.Name = "textBox3";
+            textBox3.Size = new Size(125, 27);
+            textBox3.TabIndex = 13;
+            // 
+            // textBox4
+            // 
+            textBox4.Location = new Point(279, 156);
+            textBox4.Name = "textBox4";
+            textBox4.Size = new Size(125, 27);
+            textBox4.TabIndex = 14;
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(431, 221);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowHeadersWidth = 51;
+            dataGridView1.Size = new Size(300, 188);
+            dataGridView1.TabIndex = 15;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(dataGridView1);
+            Controls.Add(textBox4);
+            Controls.Add(textBox3);
+            Controls.Add(textBox2);
+            Controls.Add(textBox1);
             Controls.Add(Descargar);
             Controls.Add(Ejecutar);
-            Controls.Add(DataGrid);
-            Controls.Add(button4);
-            Controls.Add(button3);
-            Controls.Add(button2);
-            Controls.Add(button1);
             Controls.Add(RangoSuperior);
             Controls.Add(RangoInferior);
             Controls.Add(MuestraExperimentos);
             Controls.Add(VariableAleatoria);
             Name = "Form1";
             Text = "Form1";
-            Load += Form1_Load;
-            ((System.ComponentModel.ISupportInitialize)DataGrid).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -171,12 +163,12 @@
         private Label MuestraExperimentos;
         private Label RangoInferior;
         private Label RangoSuperior;
-        private Button button1;
-        private Button button2;
-        private Button button3;
-        private Button button4;
-        private DataGridView DataGrid;
         private Button Ejecutar;
         private Button Descargar;
+        private TextBox textBox1;
+        private TextBox textBox2;
+        private TextBox textBox3;
+        private TextBox textBox4;
+        private DataGridView dataGridView1;
     }
 }

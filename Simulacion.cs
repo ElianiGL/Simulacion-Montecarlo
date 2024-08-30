@@ -5,22 +5,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Simulacion_de_Montecarlo.Algoritmos
+namespace Simulacion_de_Montecarlo
 {
     public class Simulacion
     {
         public Simulacion() { }
-    }
-    public List<int> GenerarValores(int n)
-    {
-        List<int> listaSalida = new List<int>();
-        for (int i = 0; i < n; i++)
+        public List<int> GenerarValores(int n)
         {
-            listaSalida.Add(5 * (i + 1));
+            List<int> listaSalida = new List<int>();
+            for (int i = 0; i < n; i++)
+            {
+                listaSalida.Add(5 * (i + 1));
+            }
+            return listaSalida;
         }
-        return listaSalida;
+        public List<int> SimulacionMontecarlo(int a, int b, int c, int d)
+        {
+            List<int> listaSalida = new List<int>();
+            return listaSalida;
+        }
     }
-    public List<int> SimulacionMontecarlo(int a, int b, int c, int d)
-    {
-    }
+    
 }
