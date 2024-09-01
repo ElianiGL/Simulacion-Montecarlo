@@ -63,7 +63,7 @@
             // RangoInferior
             // 
             RangoInferior.AutoSize = true;
-            RangoInferior.Location = new Point(29, 121);
+            RangoInferior.Location = new Point(29, 98);
             RangoInferior.Name = "RangoInferior";
             RangoInferior.Size = new Size(104, 20);
             RangoInferior.TabIndex = 2;
@@ -72,7 +72,7 @@
             // RangoSuperior
             // 
             RangoSuperior.AutoSize = true;
-            RangoSuperior.Location = new Point(29, 156);
+            RangoSuperior.Location = new Point(29, 133);
             RangoSuperior.Name = "RangoSuperior";
             RangoSuperior.Size = new Size(110, 20);
             RangoSuperior.TabIndex = 3;
@@ -80,7 +80,7 @@
             // 
             // Ejecutar
             // 
-            Ejecutar.Location = new Point(590, 186);
+            Ejecutar.Location = new Point(355, 209);
             Ejecutar.Name = "Ejecutar";
             Ejecutar.Size = new Size(94, 29);
             Ejecutar.TabIndex = 9;
@@ -90,37 +90,38 @@
             // 
             // Descargar
             // 
-            Descargar.Location = new Point(590, 415);
+            Descargar.Location = new Point(355, 368);
             Descargar.Name = "Descargar";
             Descargar.Size = new Size(94, 29);
             Descargar.TabIndex = 10;
             Descargar.Text = "Descargar";
             Descargar.UseVisualStyleBackColor = true;
+            Descargar.Click += Descargar_Click;
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(161, 25);
+            textBox1.Location = new Point(161, 29);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(125, 27);
             textBox1.TabIndex = 11;
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(292, 68);
+            textBox2.Location = new Point(289, 62);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(125, 27);
             textBox2.TabIndex = 12;
             // 
             // textBox3
             // 
-            textBox3.Location = new Point(254, 119);
+            textBox3.Location = new Point(139, 95);
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(125, 27);
             textBox3.TabIndex = 13;
             // 
             // textBox4
             // 
-            textBox4.Location = new Point(279, 156);
+            textBox4.Location = new Point(145, 130);
             textBox4.Name = "textBox4";
             textBox4.Size = new Size(125, 27);
             textBox4.TabIndex = 14;
@@ -128,7 +129,7 @@
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(431, 221);
+            dataGridView1.Location = new Point(29, 209);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.Size = new Size(300, 188);

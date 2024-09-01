@@ -12,58 +12,38 @@ namespace Simulacion_de_Montecarlo
         private void Ejecutar_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Ejecutando la simulación de Monte Carlo");
-            // Condicion de vacio
-            if (textBox1.Text.Equals("") ||
-               textBox2.Text.Equals("") ||
-               textBox3.Text.Equals("") ||
-               textBox4.Text.Equals(""))
-            {
-                MessageBox.Show("Los números tienen que ser MAYOR que cero, NO VACÍOS");
-                return;
-            }
-            string inicial ="", final = "";
-            // Inicialización de parámetros
-            int a = Convert.ToInt32(textBox1.Text);
-            int b = Convert.ToInt32(textBox2.Text);
-            int c = Convert.ToInt32(textBox3.Text);
-            int d = Convert.ToInt32(textBox4.Text);
+            Random random = new Random();
+            // Tamaño muestra
+            int muestra = 50;
+            // # Variables
+            int variables = 2;
 
-            // Condiciones
-            if (c >= d)
+            // Loop sobre variables
+            for (int j = 0; j < variables + 1; j++)
             {
-                MessageBox.Show("El valor del rango inferior tiene que ser menor que el del rango superior");
-                return;
+                List<int> listaEnteros = new List<int>(muestra);
+                // Generador numeros aleatorios
+                for (int i = 0; i < muestra; i++)
+                {
+                    int numAleatorio = random.Next(1, 11);
+                    listaEnteros.Add(numAleatorio);
+                }
+                // Llenar el grid
+                LlenarDataGrid(listaEnteros, j + 1);
+                listaEnteros.Clear();
             }
-            if (d <= c)
-            {
-                MessageBox.Show("El valor del rango superior tiene que ser mayor que el del rango inferior");
-                return;
-            }
-
-            // Imprecisión
-            Simulacion algoritmo = new Simulacion();
-            List<int> listaEnteros = algoritmo.SimulacionMontecarlo(a, b, c, d);
-            LlenarDataGrid(listaEnteros,inicial,final);
         }
-        private void LlenarDataGrid(List<int> lista, string numeroColumna1, string numeroColumnaFINAL)
+        private void LlenarDataGrid(List<int> lista, int columna)
         {
-            // Número de columnas
-            // Tiene que ser por el for 1+(numero de experimentos)
-
-            // Cantidad de columnas
-            dataGridView1.Columns.Clear();
-            dataGridView1.Columns.Add(numeroColumna1, "Id");
-            // n experimentos
-            dataGridView1.Columns.Add(numeroColumnaFINAL, "X(i)");
-            // Nombres # numero de experimentos
-            // Nombre "X(i)"
-
-            //Llenas los valores aleatorios
+            // Indicas el numero de columnas
+            string numeroColumna2 = columna.ToString();
+            // Determinas la cantidad de columnas
+            dataGridView1.Columns.Add(numeroColumna2, "Valor" + (columna).ToString());
+            // Recorres el grid para cada fila llenas los valores aleatorios
             for (int i = 0; i < lista.Count; i++)
             {
                 dataGridView1.Rows.Add();
-                dataGridView1.Rows[i].Cells[Int32.Parse(numeroColumna1) - 1].Value = (i + 1).ToString();
-                // n experimentos
+                dataGridView1.Rows[i].Cells[Int32.Parse(numeroColumna2) - 1].Value = lista[i].ToString();
             }
         }
         public void DescargasExcel(DataGridView data)
@@ -94,20 +74,9 @@ namespace Simulacion_de_Montecarlo
             }
             exportarExcel.Visible = true;
         }
-        // Descarga Excel no se hizo con el doble click al botón
-        private void button0_Click_1(object sender, EventArgs e)
+        private void Descargar_Click(object sender, EventArgs e)
         {
             DescargasExcel(dataGridView1);
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void DataGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
     }
 }
