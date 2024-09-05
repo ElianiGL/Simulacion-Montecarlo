@@ -1,3 +1,5 @@
+using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 //using Simulacion_de_Montecarlo.Algoritmo;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
@@ -8,6 +10,7 @@ namespace Simulacion_de_Montecarlo
         public Form1()
         {
             InitializeComponent();
+
         }
         private void Ejecutar_Click(object sender, EventArgs e)
         {
